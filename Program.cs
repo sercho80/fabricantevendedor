@@ -16,6 +16,8 @@ namespace fabricantevendedor
             vendedor.Vende();
             vendedor2.Vende();
             vendedor3.Vende();
+            // El programa se quedaría bloqueado al no tener más suministro.
+            fabricante.Fabrica();
             fabricante.Termina();
             vendedor.Termina();
             vendedor2.Termina();
