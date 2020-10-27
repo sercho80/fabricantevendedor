@@ -8,12 +8,20 @@ namespace fabricantevendedor
         {
             Console.WriteLine("INICIO");
             Almacen almacen = new Almacen();
-            Fabricante fabricante = new Fabricante(almacen);
-            Vendedor vendedor = new Vendedor(almacen);
+            Fabricante fabricante = new Fabricante(almacen, 500, 5);
+            Vendedor vendedor = new Vendedor(almacen, 800, 3);
+            Vendedor vendedor2 = new Vendedor(almacen, 1000, 3);
+            Vendedor vendedor3 = new Vendedor(almacen, 1200, 2);
             fabricante.Fabrica();
             vendedor.Vende();
+            vendedor2.Vende();
+            vendedor3.Vende();
+            // El programa se quedaría bloqueado al no tener más suministro.
+            fabricante.Fabrica();
             fabricante.Termina();
             vendedor.Termina();
+            vendedor2.Termina();
+            vendedor3.Termina();
             Console.WriteLine("FIN");
         }
     }

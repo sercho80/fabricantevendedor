@@ -10,6 +10,7 @@ namespace fabricantevendedor
         private Almacen _a;
         private Thread _t;
         private Random _rnd = new Random();
+
         public Fabricante(Almacen a, int periodicidad, int cantidad)
         {
             this._a = a;
