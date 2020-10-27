@@ -5,13 +5,17 @@ namespace fabricantevendedor
 {
     public class Vendedor
     {
+        private int _periodicidad;
+        private int _cantidad;
         private Almacen _a;
         private Thread _t;
         private Random _rnd = new Random();
-        
-        public Vendedor(Almacen a)
+      
+        public Vendedor(Almacen a, int periodicidad, int cantidad)
         {
             this._a = a;
+            this._cantidad = cantidad;
+            this._periodicidad = periodicidad;
         }
 
         public void Vende()
@@ -27,12 +31,10 @@ namespace fabricantevendedor
 
         private void _Accion()
         {
-            int ms;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < this._cantidad; i++)
             {
-                ms = _rnd.Next(1000, 1500);
-                Thread.Sleep(ms);
-                _a.Sacar();
+               Thread.Sleep(_periodicidad);
+               _a.Sacar();
             }
         }
     }
